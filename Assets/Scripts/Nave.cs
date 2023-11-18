@@ -6,6 +6,7 @@ public class Nave : MonoBehaviour
 {
     Rigidbody rigi;
     public float fuerzaNave = 1000;
+    public float fuerzaRotacion = 30;
 
     // Start is called before the first frame update
     void Start()
@@ -16,8 +17,15 @@ public class Nave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.forward * 2);
         //transform.Rotate(Vector3.right * 2);
+
+        if(Input.GetKey
+        
+        
+        (KeyCode.D))
+        {
+            transform.Rotate(Vector3.forward * -fuerzaRotacion * Time.deltaTime);    
+        }
 
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
