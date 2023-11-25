@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,18 +9,19 @@ public class Nave : MonoBehaviour
     public float fuerzaNave = 1000;
     public float fuerzaRotacion = 30;
     public bool estaDestruida = false;
+    public GameManager manager;
 
     // Start is called before the first frame update
     void Start()
     {
         rigi = GetComponent<Rigidbody>();
-
         //int numeroHijos = transform.GetChild(0).childCount;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(!manager.estamosJugando) return;
         //transform.Rotate(Vector3.right * 2);
 
         if(Input.GetKey(KeyCode.D))
@@ -54,11 +53,12 @@ public class Nave : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Finish"))
         {
-            Debug.Log("¡Gane!");
+            Debug.Log("ï¿½Gane!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
         }
     }
 
-    IEnumerator DestruirNave()
+    public IEnumerator DestruirNave()
     {
         Debug.Log("Hola");
         estaDestruida = true;
