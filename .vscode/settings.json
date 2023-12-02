@@ -57,5 +57,5 @@
         "Temp/": true
     },
     "dotnet.defaultSolution": "naves.sln",
-    "editor.fontSize": 24
+    "editor.fontSize": 28
 }
