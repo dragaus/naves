@@ -56,6 +56,12 @@ public class Nave : MonoBehaviour
             Debug.Log("�Gane!");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
         }
+
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            Destroy(other.gameObject);
+            manager.AgregarMoneda();
+        }
     }
 
     public IEnumerator DestruirNave()

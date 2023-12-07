@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Boton3D : MonoBehaviour
 {
-    public UnityAction action;
+    public UnityEvent action;
     public Material baseMaterial;
     public Material onHover;
 
@@ -25,7 +25,6 @@ public class Boton3D : MonoBehaviour
 
     void OnMouseDown()
     {
-        action();
-        // SceneManager.LoadScene(1);
+        action.Invoke();
     }
 }

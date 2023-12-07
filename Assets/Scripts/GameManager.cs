@@ -7,10 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public TMP_Text textoTimer;
     public TMP_Text textoDerrota;
+    public TMP_Text textoMonedas;
     public float timer = 50f;
     public bool estamosJugando = true;
     public Nave nave;
-
+    int cuentaMonedas = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,5 +38,13 @@ public class GameManager : MonoBehaviour
             textoTimer.gameObject.SetActive(false);
             StartCoroutine(nave.DestruirNave());
         }
+    }
+
+    public void AgregarMoneda() 
+    {
+        cuentaMonedas++;
+        //Debug.Log("Has recolectado " + cuentaMonedas.ToString() + " monedas");
+        Debug.Log($"Has recolectado {cuentaMonedas} monedas");
+        textoMonedas.text = cuentaMonedas.ToString();
     }
 }
