@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1826172291852125463}
   - component: {fileID: 1435566409038942834}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Particle x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,9 +48,9 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -5266,9 +5266,9 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -10416,6 +10416,11 @@ MonoBehaviour:
   fuerzaRotacion: 45
   estaDestruida: 0
   manager: {fileID: 0}
+  particulas:
+  - {fileID: 1826172291852125463}
+  - {fileID: 8544571639027229824}
+  - {fileID: 4807055960075679339}
+  - {fileID: 4299653443786812726}
 --- !u!1 &4337042098744393064
 GameObject:
   m_ObjectHideFlags: 0
@@ -10572,9 +10577,9 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -15469,9 +15474,9 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:

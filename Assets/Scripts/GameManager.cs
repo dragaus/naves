@@ -30,14 +30,19 @@ public class GameManager : MonoBehaviour
         // textoTimer.text = Mathf.Ceil(timer).ToString();
         // textoTimer.text = Mathf.Floor(timer).ToString();
         textoTimer.text = timer.ToString("00");
-        if(timer <= 0) 
+        if(timer <= 0)
         {
-            estamosJugando = false;
-            Debug.Log("Se acabo el tiempo");
-            textoDerrota.gameObject.SetActive(true);
-            textoTimer.gameObject.SetActive(false);
-            StartCoroutine(nave.DestruirNave());
+            AvisarMuerte();
         }
+    }
+
+    public void AvisarMuerte()
+    {
+        estamosJugando = false;
+        Debug.Log("Se acabo el tiempo");
+        textoDerrota.gameObject.SetActive(true);
+        textoTimer.gameObject.SetActive(false);
+        StartCoroutine(nave.DestruirNave());
     }
 
     public void AgregarMoneda() 

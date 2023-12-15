@@ -10,6 +10,7 @@ public class Nave : MonoBehaviour
     public float fuerzaRotacion = 30;
     public bool estaDestruida = false;
     public GameManager manager;
+    public ParticleSystem[] particulas;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,11 @@ public class Nave : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Z))
         {
            rigi.AddForce(transform.up * fuerzaNave);
+
+           for(int i = 0; i< particulas.Length;i++)
+           {
+              particulas[i].Play();
+           }
         }
     }
 
@@ -45,7 +51,7 @@ public class Nave : MonoBehaviour
 
         if(( queEsMuerte & (1 << collision.collider.gameObject.layer)) != 0)
         {
-            StartCoroutine(DestruirNave());
+            manager.AvisarMuerte();
         }
     }
 
